@@ -1,0 +1,106 @@
+{
+  "short_name": "MediCare Pro",
+  "name": "MediCare Pro - Hospital Management System",
+  "description": "Professional healthcare management solution for hospitals, clinics, and medical facilities",
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "display_override": [
+    "fullscreen",
+    "minimal-ui",
+    "window-controls-overlay"
+  ],
+  "theme_color": "#3182CE",
+  "background_color": "#ffffff",
+  "categories": [
+    "health",
+    "productivity",
+    "business",
+    "medical"
+  ],
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3063/3063812.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/5996/5996831.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/5996/5996831.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://images.unsplash.com/photo-1516549655669-df6654e435de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "MediCare Pro Dashboard"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Patient Management Interface"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add New Patient",
+      "short_name": "New Patient",
+      "description": "Quickly register a new patient",
+      "url": "/patients/new",
+      "icons": [
+        {
+          "src": "https://cdn-icons-png.flaticon.com/512/5996/5996831.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View hospital dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "https://cdn-icons-png.flaticon.com/512/3063/3063812.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "short_name": "Appointments",
+      "description": "Manage appointments schedule",
+      "url": "/appointments",
+      "icons": [
+        {
+          "src": "https://cdn-icons-png.flaticon.com/512/3063/3063812.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "protocol_handlers": [
+    {
+      "protocol": "web+medicare",
+      "url": "/?protocol=%s"
+    }
+  ]
+}
