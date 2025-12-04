@@ -362,7 +362,7 @@ const LandingPage = () => {
                     <HStack spacing={4}>
                       <Button
                         as={RouterLink}
-                        to="/login"
+                        to="/appointment"
                         size="lg"
                         colorScheme="brand"
                         rightIcon={<FiArrowRight />}
@@ -416,7 +416,7 @@ const LandingPage = () => {
       </Box>
 
       {/* Navigation Menu */}
-      <Box position="sticky" top={0} zIndex={1000} bg="white" shadow="sm" borderBottom="1px" borderColor="gray.200">
+      <Box position="sticky" top={0} zIndex={1000} bg={bgColor}shadow="sm" borderBottom="1px" borderColor="gray.200">
         <Container maxW="container.xl">
           <Flex justify="space-between" align="center" py={4}>
             <HStack spacing={3}>
@@ -442,7 +442,7 @@ const LandingPage = () => {
 
             <Button
               as={RouterLink}
-              to="/login"
+              to="/patients"
               colorScheme="brand"
               size="lg"
               rightIcon={<FiArrowRight />}
@@ -848,7 +848,7 @@ const LandingPage = () => {
               <VStack spacing={4}>
                 <Button
                   as={RouterLink}
-                  to="/login"
+                  to="/appointment"
                   size="lg"
                   colorScheme="white"
                   variant="outline"

@@ -44,6 +44,11 @@ import Unauthorized from '../pages/Unauthorized';
 import MainLayout from '../layouts/MainLayout';
 import AuthLayout from '../layouts/AuthLayout';
 import LandingPage from '../pages/LandingPage';
+import DoctorsList from '../components/DoctorsList';
+import AdvancedAppointmentPage from '../pages/auth/LoginPopup';
+import DepartmentDoctorsPage from '../components/DepartmentDoctorsPage';
+import DoctorsListingPage from '../components/DoctorsListingPage';
+import Emergency from '../pages/EmergencyPage';
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -60,6 +65,7 @@ const AppRoutes = () => {
   const getDefaultRoute = (role) => {
     switch (role) {
       case 'patient': return '/patient/dashboard';
+      case 'dlist': return '/dlist';
       case 'doctor': return '/doctor/dashboard';
       case 'admin': return '/admin/dashboard';
       case 'staff': return '/staff/register-patient';
@@ -74,9 +80,9 @@ const AppRoutes = () => {
         <Route path="/login" element={!user ? <Login /> : <Navigate to={getDefaultRoute(user.role)} replace />} />
         <Route path="/verify-otp" element={!user ? <VerifyOTP /> : <Navigate to={getDefaultRoute(user.role)} replace />} />
       </Route>
-
       {/* Root redirect based on authentication */}
       <Route path="/" element={<LandingPage />} />
+      <Route path="dlist" element={<DoctorsList />} />
       <Route path="/login" element={
         !user ? (
           <Navigate to="/login" replace />
@@ -87,11 +93,22 @@ const AppRoutes = () => {
 
       {/* Protected Routes with Role-Based Layout */}
       <Route element={<MainLayout />}>
+
+        <Route path="/doctors" element={<DoctorsListingPage />} />
+        <Route path="/emergency" element={<Emergency />} />
+        <Route path="/doctors/:departmentName" element={<DepartmentDoctorsPage />} />
+        <Route path="/departments/:departmentName/doctors" element={<DepartmentDoctorsPage />} />
         {/* Patient Routes */}
         <Route path="/patient/dashboard" element={
           <ProtectedRoute allowedRoles={['patient']}>
             <PatientDashboard />
           </ProtectedRoute>
+        } />
+
+        <Route path="/appointment" element={
+          // <ProtectedRoute allowedRoles={['patient, doctor, staff, admin']}>
+          <AdvancedAppointmentPage />
+          // </ProtectedRoute>
         } />
         <Route path="/patient/appointments" element={
           <ProtectedRoute allowedRoles={['patient']}>

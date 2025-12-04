@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": "PAT001",
+      "name": "Pavan Ponnella",
+      "phone": "+911234567890",
+      "email": "john.smith@email.com",
+      "password": "patient123",
+      "role": "patient",
+      "age": 45,
+      "gender": "Male",
+      "bloodType": "O+",
+      "address": "123 Main Street, New York",
+      "conditions": ["Hypertension", "Type 2 Diabetes"],
+      "avatar": "https://ui-avatars.com/api/?name=John+Smith&background=805AD5&color=fff",
+      "lastVisit": "2024-01-15",
+      "nextAppointment": "2024-01-25"
+    },
+    {
+      "id": "DOC001",
+      "name": "Dr. Suman Dixit",
+      "phone": "+911234567891",
+      "email": "sarah.johnson@hospital.com",
+      "password": "doctor123",
+      "role": "doctor",
+      "department": "Cardiology",
+      "specialization": "Cardiologist",
+      "experience": "12 years",
+      "avatar": "https://ui-avatars.com/api/?name=Sarah+Johnson&background=3182CE&color=fff",
+      "qualifications": "MD, Cardiology",
+      "consultationFee": "$150",
+      "availability": "Mon-Fri, 9AM-5PM"
+    },
+    {
+      "id": "ADM001",
+      "name": "Admin User",
+      "phone": "+911234567892",
+      "email": "admin@hospital.com",
+      "password": "admin123",
+      "role": "admin",
+      "avatar": "https://ui-avatars.com/api/?name=Admin+User&background=E53E3E&color=fff",
+      "permissions": ["all"],
+      "lastLogin": "2024-01-20"
+    },
+    {
+      "id": "STA001",
+      "name": "Reception Staff",
+      "phone": "+911234567893",
+      "email": "staff@hospital.com",
+      "password": "staff123",
+      "role": "staff",
+      "avatar": "https://ui-avatars.com/api/?name=Reception+Staff&background=38A169&color=fff",
+      "department": "Reception",
+      "shift": "Morning (9AM-5PM)",
+      "permissions": ["register_patient", "book_appointment", "upload_reports"]
+    },
+    {
+      "id": "PAT002",
+      "name": "Emma Wilson",
+      "phone": "+911234567894",
+      "email": "emma.wilson@email.com",
+      "password": "patient123",
+      "role": "patient",
+      "age": 32,
+      "gender": "Female",
+      "bloodType": "A+",
+      "conditions": ["Asthma", "Migraine"],
+      "avatar": "https://ui-avatars.com/api/?name=Emma+Wilson&background=805AD5&color=fff"
+    },
+    {
+      "id": "PAT003",
+      "name": "Robert Brown",
+      "phone": "+911234567895",
+      "email": "robert.brown@email.com",
+      "password": "patient123",
+      "role": "patient",
+      "age": 58,
+      "gender": "Male",
+      "bloodType": "B+",
+      "conditions": ["Arthritis", "High Cholesterol"],
+      "avatar": "https://ui-avatars.com/api/?name=Robert+Brown&background=805AD5&color=fff"
+    }
+  ]
+}

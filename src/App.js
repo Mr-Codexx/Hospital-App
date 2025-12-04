@@ -4,11 +4,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
 import AppRoutes from './router/AppRoutes';
+import { HospitalDataProvider } from './context/HospitalDataContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import HospitalAIChatbot from './components/HospitalAIChatbot';
+import GetAmbulance from './pages/GetAmbulance';
+import { AmbulanceProvider } from './context/AmbulanceContext';
+import { NavigationHistoryProvider } from './components/BreadcrumbNavigator';
 
 const theme = extendTheme({
   colors: {
@@ -58,13 +63,21 @@ function App() {
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ChakraProvider theme={theme}>
         <ErrorBoundary>
-          <NotificationProvider>
-            <AuthProvider>
-              <Router>
-                <AppRoutes />
-              </Router>
-            </AuthProvider>
-          </NotificationProvider>
+          <HospitalDataProvider>
+            <NotificationProvider>
+              <AuthProvider>
+                <AmbulanceProvider>
+                  <Router>
+                    <NavigationHistoryProvider>
+                      <AppRoutes />
+                      <HospitalAIChatbot />
+                      <GetAmbulance />
+                    </NavigationHistoryProvider>
+                  </Router>
+                </AmbulanceProvider>
+              </AuthProvider>
+            </NotificationProvider>
+          </HospitalDataProvider>
         </ErrorBoundary>
       </ChakraProvider>
     </>

@@ -1,0 +1,1309 @@
+{
+  "hospitalInfo": {
+    "name": "MediCare Pro Hospital",
+    "address": {
+      "street": "Plot No. 14, Sector 18",
+      "area": "Dwarka",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110078",
+      "country": "India"
+    },
+    "contact": {
+      "phone": "+91-11-25678901",
+      "emergency": "+91-9876543210",
+      "email": "info@medicarepro.in",
+      "website": "https://www.medicarepro.in"
+    },
+    "timings": {
+      "opd": "8:00 AM - 8:00 PM",
+      "emergency": "24x7",
+      "pharmacy": "6:00 AM - 12:00 AM"
+    },
+    "facilities": [
+      "24x7 Emergency & Trauma Care",
+      "ICU with Ventilator Support",
+      "Advanced Cardiac Care Unit",
+      "Neonatal ICU",
+      "Dialysis Unit",
+      "Modern Operation Theatres",
+      "Digital X-Ray & CT Scan",
+      "MRI & Ultrasound",
+      "Well-equipped Laboratory",
+      "Pharmacy",
+      "Ambulance Service",
+      "Cafeteria"
+    ],
+    "accreditations": [
+      "NABH Accredited",
+      "ISO 9001:2015 Certified",
+      "ISO 14001:2015 Certified",
+      "NQAS Certified",
+      "Green OT Certified"
+    ]
+  },
+
+  "departments": [
+    {
+      "id": "DEPT001",
+      "name": "Cardiology",
+      "description": "Specialized care for heart diseases and cardiovascular conditions",
+      "headDoctorId": "DOC001",
+      "totalBeds": 50,
+      "occupiedBeds": 42,
+      "floor": "2nd Floor",
+      "extension": "201-220"
+    },
+    {
+      "id": "DEPT002",
+      "name": "Neurology",
+      "description": "Treatment of brain and nervous system disorders",
+      "headDoctorId": "DOC004",
+      "totalBeds": 40,
+      "occupiedBeds": 35,
+      "floor": "3rd Floor",
+      "extension": "301-315"
+    },
+    {
+      "id": "DEPT003",
+      "name": "Orthopedics",
+      "description": "Bone, joint, and muscle care including trauma surgery",
+      "headDoctorId": "DOC003",
+      "totalBeds": 60,
+      "occupiedBeds": 48,
+      "floor": "1st Floor",
+      "extension": "101-120"
+    },
+    {
+      "id": "DEPT004",
+      "name": "Pediatrics",
+      "description": "Healthcare for infants, children, and adolescents",
+      "headDoctorId": "DOC005",
+      "totalBeds": 45,
+      "occupiedBeds": 38,
+      "floor": "Ground Floor",
+      "extension": "001-015"
+    },
+    {
+      "id": "DEPT005",
+      "name": "Gynecology",
+      "description": "Women's health and reproductive system care",
+      "headDoctorId": "DOC002",
+      "totalBeds": 35,
+      "occupiedBeds": 28,
+      "floor": "2nd Floor",
+      "extension": "221-235"
+    },
+    {
+      "id": "DEPT006",
+      "name": "Emergency Medicine",
+      "description": "24x7 emergency and critical care services",
+      "headDoctorId": "DOC008",
+      "totalBeds": 30,
+      "occupiedBeds": 25,
+      "floor": "Ground Floor",
+      "extension": "016-030"
+    },
+    {
+      "id": "DEPT007",
+      "name": "General Medicine",
+      "description": "Comprehensive internal medicine and OPD services",
+      "headDoctorId": "DOC006",
+      "totalBeds": 55,
+      "occupiedBeds": 45,
+      "floor": "1st Floor",
+      "extension": "121-135"
+    },
+    {
+      "id": "DEPT008",
+      "name": "Oncology",
+      "description": "Cancer diagnosis, treatment, and chemotherapy",
+      "headDoctorId": "DOC007",
+      "totalBeds": 25,
+      "occupiedBeds": 20,
+      "floor": "4th Floor",
+      "extension": "401-410"
+    }
+  ],
+
+  "doctors": [
+    {
+      "id": "DOC001",
+      "name": "Dr. Rajesh Sharma",
+      "gender": "Male",
+      "age": 45,
+      "specialization": "Cardiologist",
+      "department": "Cardiology",
+      "qualifications": ["MD (Medicine)", "DM (Cardiology)", "FICC"],
+      "experience": "15 years",
+      "registrationNumber": "MCI-123456",
+      "contact": {
+        "phone": "+91-9876543210",
+        "email": "dr.rajesh@medicarepro.in",
+        "emergencyContact": "+91-9876543211"
+      },
+      "availability": {
+        "days": ["Monday", "Wednesday", "Friday"],
+        "timings": "10:00 AM - 4:00 PM",
+        "consultationFee": "₹1200"
+      },
+      "languages": ["Hindi", "English", "Punjabi"],
+      "education": [
+        "MBBS - AIIMS, New Delhi",
+        "MD (Medicine) - PGI, Chandigarh",
+        "DM (Cardiology) - AIIMS, New Delhi"
+      ],
+      "awards": [
+        "Best Cardiologist Award 2022",
+        "Young Achiever Award 2020",
+        "Research Excellence Award 2019"
+      ],
+      "rating": 4.8,
+      "totalPatients": 2450,
+      "profileImage": "https://ui-avatars.com/api/?name=Dr+Rajesh+Sharma&background=3182CE&color=fff",
+      "bio": "Senior Consultant Cardiologist with expertise in interventional cardiology and heart failure management."
+    },
+    {
+      "id": "DOC002",
+      "name": "Dr. Priya Patel",
+      "gender": "Female",
+      "age": 38,
+      "specialization": "Gynecologist",
+      "department": "Gynecology",
+      "qualifications": ["MD (OBG)", "FNB (Reproductive Medicine)"],
+      "experience": "12 years",
+      "registrationNumber": "MCI-234567",
+      "contact": {
+        "phone": "+91-9876543212",
+        "email": "dr.priya@medicarepro.in",
+        "emergencyContact": "+91-9876543213"
+      },
+      "availability": {
+        "days": ["Tuesday", "Thursday", "Saturday"],
+        "timings": "11:00 AM - 6:00 PM",
+        "consultationFee": "₹1000"
+      },
+      "languages": ["Hindi", "English", "Gujarati"],
+      "education": [
+        "MBBS - KEM Hospital, Mumbai",
+        "MD (OBG) - AIIMS, New Delhi",
+        "FNB (Reproductive Medicine) - Mumbai"
+      ],
+      "awards": [
+        "Best Gynecologist Award 2023",
+        "Women Healthcare Excellence Award 2021"
+      ],
+      "rating": 4.7,
+      "totalPatients": 1850,
+      "profileImage": "https://ui-avatars.com/api/?name=Dr+Priya+Patel&background=805AD5&color=fff",
+      "bio": "Expert in high-risk pregnancies, infertility treatment, and laparoscopic gynecological surgeries."
+    },
+    {
+      "id": "DOC003",
+      "name": "Dr. Amit Kumar",
+      "gender": "Male",
+      "age": 42,
+      "specialization": "Orthopedic Surgeon",
+      "department": "Orthopedics",
+      "qualifications": ["MS (Ortho)", "MCh (Ortho)", "FJRS"],
+      "experience": "14 years",
+      "registrationNumber": "MCI-345678",
+      "contact": {
+        "phone": "+91-9876543214",
+        "email": "dr.amit@medicarepro.in",
+        "emergencyContact": "+91-9876543215"
+      },
+      "availability": {
+        "days": ["Monday", "Wednesday", "Friday", "Saturday"],
+        "timings": "9:00 AM - 5:00 PM",
+        "consultationFee": "₹1500"
+      },
+      "languages": ["Hindi", "English"],
+      "education": [
+        "MBBS - Maulana Azad Medical College, Delhi",
+        "MS (Ortho) - Safdarjung Hospital, Delhi",
+        "MCh (Ortho) - UK"
+      ],
+      "awards": [
+        "Best Orthopedic Surgeon 2022",
+        "Joint Replacement Excellence Award 2020"
+      ],
+      "rating": 4.9,
+      "totalPatients": 3200,
+      "profileImage": "https://ui-avatars.com/api/?name=Dr+Amit+Kumar&background=DD6B20&color=fff",
+      "bio": "Specialized in joint replacement, arthroscopy, and sports injury management."
+    },
+    {
+      "id": "DOC004",
+      "name": "Dr. Anjali Singh",
+      "gender": "Female",
+      "age": 40,
+      "specialization": "Neurologist",
+      "department": "Neurology",
+      "qualifications": ["DM (Neurology)", "FNCS"],
+      "experience": "13 years",
+      "registrationNumber": "MCI-456789",
+      "contact": {
+        "phone": "+91-9876543216",
+        "email": "dr.anjali@medicarepro.in",
+        "emergencyContact": "+91-9876543217"
+      },
+      "availability": {
+        "days": ["Tuesday", "Thursday", "Saturday"],
+        "timings": "10:00 AM - 4:00 PM",
+        "consultationFee": "₹1300"
+      },
+      "languages": ["Hindi", "English", "Marathi"],
+      "education": [
+        "MBBS - Grant Medical College, Mumbai",
+        "MD (Medicine) - KEM Hospital, Mumbai",
+        "DM (Neurology) - NIMHANS, Bangalore"
+      ],
+      "awards": [
+        "Neurology Excellence Award 2023",
+        "Stroke Care Specialist Award 2021"
+      ],
+      "rating": 4.6,
+      "totalPatients": 1950,
+      "profileImage": "https://ui-avatars.com/api/?name=Dr+Anjali+Singh&background=3182CE&color=fff",
+      "bio": "Expert in stroke management, epilepsy treatment, and movement disorders."
+    },
+    {
+      "id": "DOC005",
+      "name": "Dr. Rohit Gupta",
+      "gender": "Male",
+      "age": 36,
+      "specialization": "Pediatrician",
+      "department": "Pediatrics",
+      "qualifications": ["MD (Pediatrics)", "FNB (Neonatology)"],
+      "experience": "9 years",
+      "registrationNumber": "MCI-567890",
+      "contact": {
+        "phone": "+91-9876543218",
+        "email": "dr.rohit@medicarepro.in",
+        "emergencyContact": "+91-9876543219"
+      },
+      "availability": {
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "timings": "9:00 AM - 7:00 PM",
+        "consultationFee": "₹800"
+      },
+      "languages": ["Hindi", "English", "Bengali"],
+      "education": [
+        "MBBS - Calcutta Medical College",
+        "MD (Pediatrics) - AIIMS, New Delhi",
+        "FNB (Neonatology) - Delhi"
+      ],
+      "awards": [
+        "Best Pediatrician Award 2022",
+        "Child Healthcare Excellence 2020"
+      ],
+      "rating": 4.7,
+      "totalPatients": 2800,
+      "profileImage": "https://ui-avatars.com/api/?name=Dr+Rohit+Gupta&background=38A169&color=fff",
+      "bio": "Specialized in neonatal care, childhood vaccinations, and developmental pediatrics."
+    },
+    {
+      "id": "DOC006",
+      "name": "Dr. Sunita Reddy",
+      "gender": "Female",
+      "age": 48,
+      "specialization": "General Physician",
+      "department": "General Medicine",
+      "qualifications": ["MD (Medicine)", "FICP"],
+      "experience": "18 years",
+      "registrationNumber": "MCI-678901",
+      "contact": {
+        "phone": "+91-9876543220",
+        "email": "dr.sunita@medicarepro.in",
+        "emergencyContact": "+91-9876543221"
+      },
+      "availability": {
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "timings": "8:00 AM - 3:00 PM",
+        "consultationFee": "₹700"
+      },
+      "languages": ["Hindi", "English", "Telugu"],
+      "education": [
+        "MBBS - Osmania Medical College, Hyderabad",
+        "MD (Medicine) - Nizam's Institute, Hyderabad"
+      ],
+      "awards": [
+        "Lifetime Achievement Award 2023",
+        "Healthcare Excellence Award 2020"
+      ],
+      "rating": 4.8,
+      "totalPatients": 4200,
+      "profileImage": "https://ui-avatars.com/api/?name=Dr+Sunita+Reddy&background=E53E3E&color=fff",
+      "bio": "Senior Consultant Physician with expertise in diabetes management and internal medicine."
+    },
+    {
+      "id": "DOC007",
+      "name": "Dr. Arvind Joshi",
+      "gender": "Male",
+      "age": 50,
+      "specialization": "Oncologist",
+      "department": "Oncology",
+      "qualifications": ["DM (Oncology)", "FIACM"],
+      "experience": "20 years",
+      "registrationNumber": "MCI-789012",
+      "contact": {
+        "phone": "+91-9876543222",
+        "email": "dr.arvind@medicarepro.in",
+        "emergencyContact": "+91-9876543223"
+      },
+      "availability": {
+        "days": ["Monday", "Wednesday", "Friday"],
+        "timings": "10:00 AM - 5:00 PM",
+        "consultationFee": "₹2000"
+      },
+      "languages": ["Hindi", "English", "Marathi"],
+      "education": [
+        "MBBS - B.J. Medical College, Pune",
+        "MD (Medicine) - PGI, Chandigarh",
+        "DM (Oncology) - Tata Memorial, Mumbai"
+      ],
+      "awards": [
+        "Oncology Excellence Award 2023",
+        "Cancer Care Pioneer Award 2021"
+      ],
+      "rating": 4.9,
+      "totalPatients": 1650,
+      "profileImage": "https://ui-avatars.com/api/?name=Dr+Arvind+Joshi&background=805AD5&color=fff",
+      "bio": "Expert in medical oncology, chemotherapy, and targeted cancer therapies."
+    },
+    {
+      "id": "DOC008",
+      "name": "Dr. Neha Verma",
+      "gender": "Female",
+      "age": 35,
+      "specialization": "Emergency Medicine",
+      "department": "Emergency Medicine",
+      "qualifications": ["MD (Emergency Medicine)", "FNB (Critical Care)"],
+      "experience": "8 years",
+      "registrationNumber": "MCI-890123",
+      "contact": {
+        "phone": "+91-9876543224",
+        "email": "dr.neha@medicarepro.in",
+        "emergencyContact": "+91-9876543225"
+      },
+      "availability": {
+        "days": ["Rotational Shifts"],
+        "timings": "24x7",
+        "consultationFee": "₹1500 (Emergency)"
+      },
+      "languages": ["Hindi", "English"],
+      "education": [
+        "MBBS - King George's Medical University, Lucknow",
+        "MD (Emergency Medicine) - AIIMS, Delhi"
+      ],
+      "awards": [
+        "Emergency Care Excellence Award 2022",
+        "Rapid Response Team Leader 2020"
+      ],
+      "rating": 4.7,
+      "totalPatients": 3800,
+      "profileImage": "https://ui-avatars.com/api/?name=Dr+Neha+Verma&background=DD6B20&color=fff",
+      "bio": "Specialized in trauma care, emergency resuscitation, and critical care management."
+    }
+  ],
+
+  "patients": [
+    {
+      "id": "PAT001",
+      "name": "Rahul Mehta",
+      "gender": "Male",
+      "age": 45,
+      "dateOfBirth": "1978-05-15",
+      "bloodGroup": "B+",
+      "contact": {
+        "phone": "+91-9876543230",
+        "email": "rahul.mehta@gmail.com",
+        "emergencyContact": {
+          "name": "Priya Mehta",
+          "relation": "Wife",
+          "phone": "+91-9876543231"
+        }
+      },
+      "address": {
+        "street": "H.No. 123, Sector 22",
+        "area": "Rohini",
+        "city": "Delhi",
+        "state": "Delhi",
+        "pincode": "110085",
+        "country": "India"
+      },
+      "medicalInfo": {
+        "height": "175 cm",
+        "weight": "78 kg",
+        "bmi": "25.5",
+        "allergies": ["Penicillin", "Dust"],
+        "chronicConditions": ["Hypertension", "Type 2 Diabetes"],
+        "currentMedications": ["Metformin 500mg", "Amlodipine 5mg"],
+        "pastSurgeries": ["Appendectomy (2010)"],
+        "familyHistory": ["Father: Heart Disease", "Mother: Diabetes"]
+      },
+      "insurance": {
+        "provider": "Star Health Insurance",
+        "policyNumber": "SH123456789",
+        "validTill": "2024-12-31",
+        "coverageAmount": "₹5,00,000"
+      },
+      "primaryDoctor": "DOC001",
+      "registrationDate": "2020-03-15",
+      "lastVisit": "2024-01-10",
+      "nextAppointment": "2024-02-15",
+      "status": "active",
+      "medicalRecordNumber": "MRN001234"
+    },
+    {
+      "id": "PAT002",
+      "name": "Priya Sharma",
+      "gender": "Female",
+      "age": 32,
+      "dateOfBirth": "1991-08-22",
+      "bloodGroup": "O+",
+      "contact": {
+        "phone": "+91-9876543232",
+        "email": "priya.sharma@gmail.com",
+        "emergencyContact": {
+          "name": "Rajesh Sharma",
+          "relation": "Husband",
+          "phone": "+91-9876543233"
+        }
+      },
+      "address": {
+        "street": "Flat 201, Galaxy Apartments",
+        "area": "Gurugram Sector 45",
+        "city": "Gurugram",
+        "state": "Haryana",
+        "pincode": "122003",
+        "country": "India"
+      },
+      "medicalInfo": {
+        "height": "162 cm",
+        "weight": "58 kg",
+        "bmi": "22.1",
+        "allergies": ["None"],
+        "chronicConditions": ["Migraine"],
+        "currentMedications": ["Sumatriptan 50mg"],
+        "pastSurgeries": ["C-Section (2020)"],
+        "familyHistory": ["Mother: Breast Cancer", "Father: Hypertension"]
+      },
+      "insurance": {
+        "provider": "ICICI Lombard",
+        "policyNumber": "IL987654321",
+        "validTill": "2024-11-30",
+        "coverageAmount": "₹7,50,000"
+      },
+      "primaryDoctor": "DOC002",
+      "registrationDate": "2019-07-20",
+      "lastVisit": "2024-01-05",
+      "nextAppointment": "2024-02-10",
+      "status": "active",
+      "medicalRecordNumber": "MRN001235"
+    },
+    {
+      "id": "PAT003",
+      "name": "Amit Patel",
+      "gender": "Male",
+      "age": 58,
+      "dateOfBirth": "1965-11-30",
+      "bloodGroup": "A+",
+      "contact": {
+        "phone": "+91-9876543234",
+        "email": "amit.patel@gmail.com",
+        "emergencyContact": {
+          "name": "Neha Patel",
+          "relation": "Daughter",
+          "phone": "+91-9876543235"
+        }
+      },
+      "address": {
+        "street": "Shop No. 5, Gandhi Market",
+        "area": "Noida Sector 18",
+        "city": "Noida",
+        "state": "Uttar Pradesh",
+        "pincode": "201301",
+        "country": "India"
+      },
+      "medicalInfo": {
+        "height": "168 cm",
+        "weight": "85 kg",
+        "bmi": "30.1",
+        "allergies": ["Shellfish"],
+        "chronicConditions": ["Hypertension", "Arthritis", "High Cholesterol"],
+        "currentMedications": ["Atorvastatin 20mg", "Losartan 50mg", "Glucosamine"],
+        "pastSurgeries": ["Knee Replacement (2018)", "Gallbladder Removal (2015)"],
+        "familyHistory": ["Father: Stroke", "Brother: Diabetes"]
+      },
+      "insurance": {
+        "provider": "HDFC ERGO",
+        "policyNumber": "HE456789123",
+        "validTill": "2024-10-15",
+        "coverageAmount": "₹10,00,000"
+      },
+      "primaryDoctor": "DOC003",
+      "registrationDate": "2018-02-10",
+      "lastVisit": "2024-01-08",
+      "nextAppointment": "2024-03-01",
+      "status": "active",
+      "medicalRecordNumber": "MRN001236"
+    },
+    {
+      "id": "PAT004",
+      "name": "Sangeeta Reddy",
+      "gender": "Female",
+      "age": 42,
+      "dateOfBirth": "1981-04-18",
+      "bloodGroup": "AB+",
+      "contact": {
+        "phone": "+91-9876543236",
+        "email": "sangeeta.reddy@gmail.com",
+        "emergencyContact": {
+          "name": "Ramesh Reddy",
+          "relation": "Husband",
+          "phone": "+91-9876543237"
+        }
+      },
+      "address": {
+        "street": "House No. 45, Jubilee Hills",
+        "area": "Jubilee Hills",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "pincode": "500033",
+        "country": "India"
+      },
+      "medicalInfo": {
+        "height": "155 cm",
+        "weight": "65 kg",
+        "bmi": "27.0",
+        "allergies": ["Latex"],
+        "chronicConditions": ["Hypothyroidism", "PCOS"],
+        "currentMedications": ["Levothyroxine 50mcg", "Metformin 500mg"],
+        "pastSurgeries": ["Ovarian Cyst Removal (2015)"],
+        "familyHistory": ["Mother: Thyroid", "Sister: PCOS"]
+      },
+      "insurance": {
+        "provider": "Bajaj Allianz",
+        "policyNumber": "BA789123456",
+        "validTill": "2024-09-30",
+        "coverageAmount": "₹6,00,000"
+      },
+      "primaryDoctor": "DOC004",
+      "registrationDate": "2020-09-25",
+      "lastVisit": "2024-01-12",
+      "nextAppointment": null,
+      "status": "inactive",
+      "medicalRecordNumber": "MRN001237"
+    },
+    {
+      "id": "PAT005",
+      "name": "Rohit Gupta",
+      "gender": "Male",
+      "age": 29,
+      "dateOfBirth": "1994-07-08",
+      "bloodGroup": "B-",
+      "contact": {
+        "phone": "+91-9876543238",
+        "email": "rohit.gupta@hotmail.com",
+        "emergencyContact": {
+          "name": "Sunita Gupta",
+          "relation": "Mother",
+          "phone": "+91-9876543239"
+        }
+      },
+      "address": {
+        "street": "Flat 302, Sunshine Towers",
+        "area": "Salt Lake Sector V",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "700091",
+        "country": "India"
+      },
+      "medicalInfo": {
+        "height": "180 cm",
+        "weight": "75 kg",
+        "bmi": "23.1",
+        "allergies": ["Peanuts"],
+        "chronicConditions": ["Asthma"],
+        "currentMedications": ["Salbutamol Inhaler"],
+        "pastSurgeries": ["Tonsillectomy (2005)"],
+        "familyHistory": ["Father: Asthma", "Mother: None"]
+      },
+      "insurance": {
+        "provider": "Max Bupa",
+        "policyNumber": "MB321654987",
+        "validTill": "2024-08-20",
+        "coverageAmount": "₹8,00,000"
+      },
+      "primaryDoctor": "DOC005",
+      "registrationDate": "2021-05-15",
+      "lastVisit": "2024-01-03",
+      "nextAppointment": "2024-01-25",
+      "status": "active",
+      "medicalRecordNumber": "MRN001238"
+    },
+    {
+      "id": "PAT006",
+      "name": "Anjali Joshi",
+      "gender": "Female",
+      "age": 67,
+      "dateOfBirth": "1956-12-03",
+      "bloodGroup": "O-",
+      "contact": {
+        "phone": "+91-9876543240",
+        "email": "anjali.joshi@gmail.com",
+        "emergencyContact": {
+          "name": "Vikram Joshi",
+          "relation": "Son",
+          "phone": "+91-9876543241"
+        }
+      },
+      "address": {
+        "street": "Bungalow No. 7, Koregaon Park",
+        "area": "Koregaon Park",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "pincode": "411001",
+        "country": "India"
+      },
+      "medicalInfo": {
+        "height": "152 cm",
+        "weight": "62 kg",
+        "bmi": "26.8",
+        "allergies": ["Sulfa Drugs"],
+        "chronicConditions": ["Diabetes Type 2", "Hypertension", "Osteoporosis"],
+        "currentMedications": ["Metformin 1000mg", "Amlodipine 10mg", "Alendronate"],
+        "pastSurgeries": ["Hip Replacement (2019)", "Cataract Surgery (2020)"],
+        "familyHistory": ["Mother: Diabetes", "Father: Heart Disease"]
+      },
+      "insurance": {
+        "provider": "New India Assurance",
+        "policyNumber": "NI654987321",
+        "validTill": "2024-12-31",
+        "coverageAmount": "₹12,00,000"
+      },
+      "primaryDoctor": "DOC006",
+      "registrationDate": "2017-08-30",
+      "lastVisit": "2024-01-15",
+      "nextAppointment": "2024-02-28",
+      "status": "active",
+      "medicalRecordNumber": "MRN001239"
+    },
+    {
+      "id": "PAT007",
+      "name": "Vikram Singh",
+      "gender": "Male",
+      "age": 53,
+      "dateOfBirth": "1970-09-25",
+      "bloodGroup": "A-",
+      "contact": {
+        "phone": "+91-9876543242",
+        "email": "vikram.singh@gmail.com",
+        "emergencyContact": {
+          "name": "Geeta Singh",
+          "relation": "Wife",
+          "phone": "+91-9876543243"
+        }
+      },
+      "address": {
+        "street": "Plot No. 89, Model Town",
+        "area": "Model Town",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "pincode": "302017",
+        "country": "India"
+      },
+      "medicalInfo": {
+        "height": "170 cm",
+        "weight": "88 kg",
+        "bmi": "30.4",
+        "allergies": ["Iodine Contrast"],
+        "chronicConditions": ["Heart Disease", "Sleep Apnea"],
+        "currentMedications": ["Clopidogrel 75mg", "Atorvastatin 40mg", "CPAP Therapy"],
+        "pastSurgeries": ["Angioplasty (2021)", "Appendectomy (1995)"],
+        "familyHistory": ["Father: Heart Attack", "Brother: Hypertension"]
+      },
+      "insurance": {
+        "provider": "Reliance General",
+        "policyNumber": "RG987321654",
+        "validTill": "2024-07-31",
+        "coverageAmount": "₹15,00,000"
+      },
+      "primaryDoctor": "DOC007",
+      "registrationDate": "2019-11-20",
+      "lastVisit": "2024-01-18",
+      "nextAppointment": "2024-02-05",
+      "status": "active",
+      "medicalRecordNumber": "MRN001240"
+    },
+    {
+      "id": "PAT008",
+      "name": "Meera Iyer",
+      "gender": "Female",
+      "age": 38,
+      "dateOfBirth": "1985-03-14",
+      "bloodGroup": "B+",
+      "contact": {
+        "phone": "+91-9876543244",
+        "email": "meera.iyer@gmail.com",
+        "emergencyContact": {
+          "name": "Rahul Iyer",
+          "relation": "Husband",
+          "phone": "+91-9876543245"
+        }
+      },
+      "address": {
+        "street": "Flat 501, Rainbow Heights",
+        "area": "Anna Nagar",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "pincode": "600040",
+        "country": "India"
+      },
+      "medicalInfo": {
+        "height": "160 cm",
+        "weight": "55 kg",
+        "bmi": "21.5",
+        "allergies": ["Aspirin"],
+        "chronicConditions": ["Migraine", "Anxiety"],
+        "currentMedications": ["Propranolol 40mg", "Sertraline 50mg"],
+        "pastSurgeries": ["C-Section (2018, 2020)"],
+        "familyHistory": ["Mother: Migraine", "Father: Diabetes"]
+      },
+      "insurance": {
+        "provider": "Oriental Insurance",
+        "policyNumber": "OI456123789",
+        "validTill": "2024-06-30",
+        "coverageAmount": "₹5,00,000"
+      },
+      "primaryDoctor": "DOC008",
+      "registrationDate": "2022-02-28",
+      "lastVisit": "2024-01-20",
+      "nextAppointment": null,
+      "status": "inactive",
+      "medicalRecordNumber": "MRN001241"
+    }
+  ],
+
+  "appointments": [
+    {
+      "id": "APT001",
+      "patientId": "PAT001",
+      "doctorId": "DOC001",
+      "department": "Cardiology",
+      "date": "2024-02-15",
+      "time": "10:30 AM",
+      "type": "Follow-up",
+      "status": "scheduled",
+      "symptoms": "Chest pain, shortness of breath",
+      "notes": "Regular checkup post angioplasty",
+      "createdAt": "2024-01-10T10:30:00Z",
+      "updatedAt": "2024-01-10T10:30:00Z"
+    },
+    {
+      "id": "APT002",
+      "patientId": "PAT002",
+      "doctorId": "DOC002",
+      "department": "Gynecology",
+      "date": "2024-02-10",
+      "time": "11:00 AM",
+      "type": "Consultation",
+      "status": "scheduled",
+      "symptoms": "Regular checkup",
+      "notes": "Annual gynecological examination",
+      "createdAt": "2024-01-05T11:15:00Z",
+      "updatedAt": "2024-01-05T11:15:00Z"
+    },
+    {
+      "id": "APT003",
+      "patientId": "PAT003",
+      "doctorId": "DOC003",
+      "department": "Orthopedics",
+      "date": "2024-03-01",
+      "time": "2:00 PM",
+      "type": "Follow-up",
+      "status": "scheduled",
+      "symptoms": "Knee pain, swelling",
+      "notes": "Post knee replacement review",
+      "createdAt": "2024-01-08T14:20:00Z",
+      "updatedAt": "2024-01-08T14:20:00Z"
+    },
+    {
+      "id": "APT004",
+      "patientId": "PAT005",
+      "doctorId": "DOC005",
+      "department": "Pediatrics",
+      "date": "2024-01-25",
+      "time": "3:30 PM",
+      "type": "Consultation",
+      "status": "completed",
+      "symptoms": "Asthma flare-up",
+      "notes": "Adjust inhaler dosage",
+      "createdAt": "2024-01-03T09:45:00Z",
+      "updatedAt": "2024-01-25T16:00:00Z"
+    },
+    {
+      "id": "APT005",
+      "patientId": "PAT006",
+      "doctorId": "DOC006",
+      "department": "General Medicine",
+      "date": "2024-02-28",
+      "time": "9:00 AM",
+      "type": "Follow-up",
+      "status": "scheduled",
+      "symptoms": "Diabetes management",
+      "notes": "Blood sugar level review",
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "APT006",
+      "patientId": "PAT007",
+      "doctorId": "DOC007",
+      "department": "Oncology",
+      "date": "2024-02-05",
+      "time": "11:30 AM",
+      "type": "Chemotherapy",
+      "status": "scheduled",
+      "symptoms": "Regular chemotherapy session",
+      "notes": "3rd cycle of chemotherapy",
+      "createdAt": "2024-01-18T12:15:00Z",
+      "updatedAt": "2024-01-18T12:15:00Z"
+    }
+  ],
+
+  "medicalRecords": [
+    {
+      "id": "REC001",
+      "patientId": "PAT001",
+      "doctorId": "DOC001",
+      "type": "Prescription",
+      "date": "2024-01-10",
+      "description": "Follow-up medication after angioplasty",
+      "medications": [
+        {
+          "name": "Clopidogrel",
+          "dosage": "75mg",
+          "frequency": "Once daily",
+          "duration": "1 year"
+        },
+        {
+          "name": "Atorvastatin",
+          "dosage": "40mg",
+          "frequency": "Once daily at bedtime",
+          "duration": "Long term"
+        },
+        {
+          "name": "Metoprolol",
+          "dosage": "25mg",
+          "frequency": "Twice daily",
+          "duration": "6 months"
+        }
+      ],
+      "instructions": "Take medications regularly. Avoid strenuous activity. Follow up in 1 month.",
+      "attachment": "prescription_001.pdf"
+    },
+    {
+      "id": "REC002",
+      "patientId": "PAT003",
+      "doctorId": "DOC003",
+      "type": "Lab Report",
+      "date": "2024-01-08",
+      "description": "Complete blood count and lipid profile",
+      "findings": {
+        "hemoglobin": "14.2 g/dL",
+        "wbcCount": "7800 cells/μL",
+        "platelets": "250,000/μL",
+        "cholesterol": "210 mg/dL",
+        "triglycerides": "150 mg/dL"
+      },
+      "interpretation": "Elevated cholesterol levels noted. Continue cholesterol medication.",
+      "attachment": "lab_report_003.pdf"
+    },
+    {
+      "id": "REC003",
+      "patientId": "PAT006",
+      "doctorId": "DOC006",
+      "type": "Discharge Summary",
+      "date": "2024-01-15",
+      "description": "Hospital admission for diabetes management",
+      "admissionDate": "2024-01-10",
+      "dischargeDate": "2024-01-15",
+      "diagnosis": "Uncontrolled Type 2 Diabetes",
+      "treatment": "Insulin therapy adjustment, dietary counseling",
+      "followUp": "Follow up in 2 weeks with blood sugar readings",
+      "attachment": "discharge_summary_006.pdf"
+    }
+  ],
+
+  "bills": [
+    {
+      "id": "BILL001",
+      "patientId": "PAT001",
+      "appointmentId": "APT001",
+      "date": "2024-01-10",
+      "items": [
+        {
+          "description": "Consultation Fee",
+          "amount": 1200,
+          "quantity": 1
+        },
+        {
+          "description": "ECG Test",
+          "amount": 500,
+          "quantity": 1
+        },
+        {
+          "description": "Medication",
+          "amount": 1500,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 3200,
+      "discount": 200,
+      "tax": 480,
+      "grandTotal": 3480,
+      "status": "paid",
+      "paymentMethod": "Credit Card",
+      "paymentDate": "2024-01-10"
+    },
+    {
+      "id": "BILL002",
+      "patientId": "PAT003",
+      "appointmentId": "APT003",
+      "date": "2024-01-08",
+      "items": [
+        {
+          "description": "Consultation Fee",
+          "amount": 1500,
+          "quantity": 1
+        },
+        {
+          "description": "X-Ray Knee",
+          "amount": 800,
+          "quantity": 1
+        },
+        {
+          "description": "Pain Medication",
+          "amount": 600,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 2900,
+      "discount": 0,
+      "tax": 435,
+      "grandTotal": 3335,
+      "status": "pending",
+      "paymentMethod": null,
+      "paymentDate": null
+    }
+  ],
+
+  "rooms": [
+    {
+      "id": "RM001",
+      "roomNumber": "201",
+      "type": "General Ward",
+      "floor": "2nd Floor",
+      "department": "Cardiology",
+      "beds": [
+        {
+          "bedNumber": "201A",
+          "status": "occupied",
+          "patientId": "PAT001",
+          "admissionDate": "2024-01-05",
+          "expectedDischarge": "2024-01-12"
+        },
+        {
+          "bedNumber": "201B",
+          "status": "available",
+          "patientId": null,
+          "admissionDate": null,
+          "expectedDischarge": null
+        }
+      ],
+      "charges": {
+        "perDay": 1500,
+        "acCharges": 500,
+        "extraCharges": 200
+      }
+    },
+    {
+      "id": "RM002",
+      "roomNumber": "301",
+      "type": "ICU",
+      "floor": "3rd Floor",
+      "department": "Neurology",
+      "beds": [
+        {
+          "bedNumber": "301A",
+          "status": "occupied",
+          "patientId": "PAT004",
+          "admissionDate": "2024-01-10",
+          "expectedDischarge": "2024-01-20"
+        },
+        {
+          "bedNumber": "301B",
+          "status": "occupied",
+          "patientId": "PAT008",
+          "admissionDate": "2024-01-15",
+          "expectedDischarge": "2024-01-18"
+        }
+      ],
+      "charges": {
+        "perDay": 5000,
+        "acCharges": 0,
+        "extraCharges": 1000
+      }
+    }
+  ],
+
+  "staff": [
+    {
+      "id": "STF001",
+      "name": "Rajesh Kumar",
+      "role": "Receptionist",
+      "department": "Reception",
+      "contact": {
+        "phone": "+91-9876543250",
+        "email": "rajesh.kumar@medicarepro.in"
+      },
+      "shift": "Morning (9 AM - 5 PM)",
+      "employeeId": "EMP001234"
+    },
+    {
+      "id": "STF002",
+      "name": "Priya Singh",
+      "role": "Nurse",
+      "department": "Cardiology",
+      "contact": {
+        "phone": "+91-9876543251",
+        "email": "priya.singh@medicarepro.in"
+      },
+      "shift": "Day (8 AM - 4 PM)",
+      "employeeId": "EMP001235"
+    },
+    {
+      "id": "STF003",
+      "name": "Amit Sharma",
+      "role": "Lab Technician",
+      "department": "Pathology",
+      "contact": {
+        "phone": "+91-9876543252",
+        "email": "amit.sharma@medicarepro.in"
+      },
+      "shift": "General (9 AM - 6 PM)",
+      "employeeId": "EMP001236"
+    }
+  ],
+
+  "pharmacy": [
+    {
+      "id": "MED001",
+      "name": "Metformin 500mg",
+      "type": "Tablet",
+      "manufacturer": "Sun Pharma",
+      "category": "Anti-diabetic",
+      "stock": 500,
+      "unit": "tablets",
+      "price": 25,
+      "expiryDate": "2025-06-30"
+    },
+    {
+      "id": "MED002",
+      "name": "Atorvastatin 20mg",
+      "type": "Tablet",
+      "manufacturer": "Cipla",
+      "category": "Cholesterol",
+      "stock": 300,
+      "unit": "tablets",
+      "price": 35,
+      "expiryDate": "2024-12-31"
+    },
+    {
+      "id": "MED003",
+      "name": "Amlodipine 5mg",
+      "type": "Tablet",
+      "manufacturer": "Dr. Reddy's",
+      "category": "Anti-hypertensive",
+      "stock": 400,
+      "unit": "tablets",
+      "price": 20,
+      "expiryDate": "2025-03-31"
+    },
+    {
+      "id": "MED004",
+      "name": "Salbutamol Inhaler",
+      "type": "Inhaler",
+      "manufacturer": "GlaxoSmithKline",
+      "category": "Respiratory",
+      "stock": 150,
+      "unit": "pieces",
+      "price": 120,
+      "expiryDate": "2024-10-31"
+    }
+  ],
+
+  "labTests": [
+    {
+      "id": "LAB001",
+      "name": "Complete Blood Count (CBC)",
+      "department": "Pathology",
+      "price": 400,
+      "duration": "4 hours",
+      "sampleType": "Blood",
+      "preparation": "Fasting not required"
+    },
+    {
+      "id": "LAB002",
+      "name": "Lipid Profile",
+      "department": "Pathology",
+      "price": 600,
+      "duration": "24 hours",
+      "sampleType": "Blood",
+      "preparation": "12 hours fasting required"
+    },
+    {
+      "id": "LAB003",
+      "name": "ECG",
+      "department": "Cardiology",
+      "price": 500,
+      "duration": "30 minutes",
+      "sampleType": "N/A",
+      "preparation": "No preparation needed"
+    },
+    {
+      "id": "LAB004",
+      "name": "X-Ray Chest",
+      "department": "Radiology",
+      "price": 800,
+      "duration": "2 hours",
+      "sampleType": "N/A",
+      "preparation": "Remove metal objects"
+    }
+  ],
+
+  "emergencyCases": [
+    {
+      "id": "EMG001",
+      "patientId": "PAT008",
+      "doctorId": "DOC008",
+      "arrivalTime": "2024-01-20T14:30:00Z",
+      "triageLevel": "High",
+      "complaint": "Severe headache with vomiting",
+      "vitals": {
+        "bp": "160/100",
+        "pulse": "110",
+        "temperature": "38.5",
+        "spo2": "96%"
+      },
+      "status": "Under Observation",
+      "assignedRoom": "RM002"
+    },
+    {
+      "id": "EMG002",
+      "patientId": "PAT004",
+      "doctorId": "DOC008",
+      "arrivalTime": "2024-01-10T09:15:00Z",
+      "triageLevel": "Critical",
+      "complaint": "Seizure with loss of consciousness",
+      "vitals": {
+        "bp": "140/90",
+        "pulse": "95",
+        "temperature": "37.8",
+        "spo2": "92%"
+      },
+      "status": "Discharged",
+      "assignedRoom": "RM002"
+    }
+  ],
+
+  "notifications": [
+    {
+      "id": "NOT001",
+      "userId": "DOC001",
+      "title": "New Appointment Scheduled",
+      "message": "Patient Rahul Mehta has booked an appointment for 15th Feb 2024 at 10:30 AM",
+      "type": "appointment",
+      "priority": "medium",
+      "read": false,
+      "timestamp": "2024-01-10T10:30:00Z"
+    },
+    {
+      "id": "NOT002",
+      "userId": "PAT001",
+      "title": "Lab Reports Ready",
+      "message": "Your lab test results are now available in your patient portal",
+      "type": "lab",
+      "priority": "low",
+      "read": true,
+      "timestamp": "2024-01-09T15:45:00Z"
+    },
+    {
+      "id": "NOT003",
+      "userId": "ADMIN001",
+      "title": "System Maintenance",
+      "message": "Scheduled system maintenance on 20th Jan 2024 from 2:00 AM to 4:00 AM",
+      "type": "system",
+      "priority": "low",
+      "read": false,
+      "timestamp": "2024-01-08T09:00:00Z"
+    }
+  ],
+
+  "analytics": {
+    "monthlyStats": {
+      "january2024": {
+        "totalPatients": 1250,
+        "newPatients": 156,
+        "totalAppointments": 890,
+        "emergencyCases": 45,
+        "admissions": 120,
+        "surgeries": 65,
+        "revenue": "₹45,20,000",
+        "patientSatisfaction": "94%"
+      }
+    },
+    "departmentPerformance": [
+      {
+        "department": "Cardiology",
+        "patientsTreated": 245,
+        "surgeries": 35,
+        "revenue": "₹8,50,000",
+        "occupancy": "84%"
+      },
+      {
+        "department": "Orthopedics",
+        "patientsTreated": 320,
+        "surgeries": 48,
+        "revenue": "₹12,00,000",
+        "occupancy": "80%"
+      },
+      {
+        "department": "General Medicine",
+        "patientsTreated": 560,
+        "surgeries": 12,
+        "revenue": "₹6,80,000",
+        "occupancy": "82%"
+      }
+    ],
+    "doctorPerformance": [
+      {
+        "doctorId": "DOC001",
+        "appointments": 45,
+        "surgeries": 8,
+        "patientSatisfaction": "96%",
+        "revenueGenerated": "₹5,40,000"
+      },
+      {
+        "doctorId": "DOC003",
+        "appointments": 52,
+        "surgeries": 15,
+        "patientSatisfaction": "98%",
+        "revenueGenerated": "₹7,80,000"
+      }
+    ]
+  }
+}
