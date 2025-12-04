@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Flex,
@@ -77,6 +77,11 @@ const Login = () => {
     },
   ];
 
+ const { requireLogin } = useAuth();
+
+  useEffect(() => {
+    requireLogin();
+  }, []);
   const handleRoleSelect = (role, phoneNumber) => {
     setSelectedRole(role);
     setPhone(phoneNumber);

@@ -29,6 +29,7 @@ import { MdDashboard } from 'react-icons/md';
 import Sidebar from './Sidebar';
 import { useAuth } from '../context/AuthContext';
 import { useHospitalDataContext } from '../context/HospitalDataContext';
+import BreadcrumbNavigator from '../components/BreadcrumbNavigator';
 
 export default function MainLayout() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -308,7 +309,7 @@ console.log(sidebarCollapsed);
             </HStack>
           </Flex>
         </Box>
-
+<BreadcrumbNavigator />
         {/* Main Content */}
         <Box
           flex={1}

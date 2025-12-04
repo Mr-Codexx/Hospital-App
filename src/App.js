@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChakraProvider, extendTheme, ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme, ColorModeScript, Box } from '@chakra-ui/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
@@ -71,7 +71,9 @@ function App() {
                     <NavigationHistoryProvider>
                       <AppRoutes />
                       <HospitalAIChatbot />
-                      <GetAmbulance />
+                      <Box style={{ zIndex: 111, position: "fixed" }}>
+                        <GetAmbulance />
+                      </Box>
                     </NavigationHistoryProvider>
                   </Router>
                 </AmbulanceProvider>

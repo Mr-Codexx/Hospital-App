@@ -31,6 +31,10 @@ import {
   SimpleGrid,
   Wrap,
   WrapItem,
+  useColorMode,
+  MenuOptionGroup,
+  MenuGroup,
+  MenuItemOption,
 } from '@chakra-ui/react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -86,17 +90,20 @@ import {
   MdLanguage,
   MdDashboard,
   MdScience,
-  MdLocalPharmacy ,
+  MdLocalPharmacy,
   MdSchool,
   MdWork,
+  MdGasMeter,
+  MdBrightnessAuto,
 } from 'react-icons/md';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
   const { user, logout } = useAuth();
   const { getNotifications, getTodaysAppointments } = useHospitalDataContext();
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   const [collapsed, setCollapsed] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -105,6 +112,7 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
   const [userStats, setUserStats] = useState({});
 
   const isSmallScreen = useBreakpointValue({ base: true, md: false });
+  const { colorMode, setColorMode } = useColorMode();
 
   useEffect(() => {
     if (isSmallScreen) {
@@ -117,10 +125,10 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
       try {
         const notifs = getNotifications?.() || [];
         const appointments = getTodaysAppointments?.() || [];
-        
+
         setNotifications(notifs.filter(n => !n.read).slice(0, 5));
         setTodayAppointments(appointments.length);
-        
+
         if (user) {
           setUserStats({
             appointments: 12,
@@ -133,7 +141,7 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
         console.error('Error loading sidebar data:', error);
       }
     };
-    
+
     loadData();
   }, [user, getNotifications, getTodaysAppointments]);
 
@@ -147,17 +155,21 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
     patient: {
       main: [
         { name: 'Dashboard', icon: FiHome, path: '/', badge: todayAppointments },
-        { name: 'Appointments', icon: FiCalendar, path: '/patient/appointments', submenu: [
-          { name: 'Book Appointment', path: '/book-appointment' },
-          { name: 'My Appointments', path: '/patient/appointments' },
-          { name: 'Schedule', path: '/patient/schedule' },
-        ]},
+        {
+          name: 'Appointments', icon: FiCalendar, path: '/patient/appointments', submenu: [
+            { name: 'Book Appointment', path: '/book-appointment' },
+            { name: 'My Appointments', path: '/patient/appointments' },
+            { name: 'Schedule', path: '/patient/schedule' },
+          ]
+        },
         { name: 'Prescriptions', icon: FiFileText, path: '/patient/prescriptions' },
-        { name: 'Medical Records', icon: FiFileText, path: '/patient/records', submenu: [
-          { name: 'Lab Reports', path: '/patient/reports' },
-          { name: 'Discharge Summary', path: '/patient/discharge' },
-          { name: 'Vaccination', path: '/patient/vaccination' },
-        ]},
+        {
+          name: 'Medical Records', icon: FiFileText, path: '/patient/records', submenu: [
+            { name: 'Lab Reports', path: '/patient/reports' },
+            { name: 'Discharge Summary', path: '/patient/discharge' },
+            { name: 'Vaccination', path: '/patient/vaccination' },
+          ]
+        },
         { name: 'Billing', icon: FiDollarSign, path: '/patient/billing' },
         { name: 'Profile', icon: FiUser, path: '/patient/profile' },
       ],
@@ -165,7 +177,7 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
         { name: 'Find Doctors', icon: FiUsers, path: '/doctors', color: 'blue' },
         { name: 'Departments', icon: MdLocalHospital, path: '/departments', color: 'green' },
         { name: 'Emergency', icon: MdEmergency, path: '/emergency', color: 'red' },
-        { name: 'Pharmacy', icon: MdLocalPharmacy , path: '/pharmacy', color: 'purple' },
+        { name: 'Pharmacy', icon: MdLocalPharmacy, path: '/pharmacy', color: 'purple' },
       ]
     },
     doctor: {
@@ -214,7 +226,7 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
         { name: 'Upload Reports', icon: FiUploadCloud, path: '/staff/upload-reports' },
         { name: 'Patient Records', icon: FiFileText, path: '/staff/records' },
         { name: 'Billing', icon: FiDollarSign, path: '/staff/billing' },
-        { name: 'Pharmacy', icon: MdLocalPharmacy , path: '/staff/pharmacy' },
+        { name: 'Pharmacy', icon: MdLocalPharmacy, path: '/staff/pharmacy' },
         { name: 'Lab', icon: MdScience, path: '/staff/lab' },
       ],
       quick: [
@@ -232,11 +244,11 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
   };
 
   const NavItem = ({ item, level = 0 }) => {
-    const isActive = location.pathname === item.path || 
-                    (item.submenu && item.submenu.some(sub => location.pathname === sub.path));
-    
+    const isActive = location.pathname === item.path ||
+      (item.submenu && item.submenu.some(sub => location.pathname === sub.path));
+
     const hasSubmenu = item.submenu && item.submenu.length > 0;
-    
+
     return (
       <Box>
         <Link
@@ -264,38 +276,38 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
             bg={isActive ? 'brand.500' : 'transparent'}
             color={isActive ? 'white' : 'inherit'}
             _hover={{
-              bg: isActive ? 'brand.600' : {bgColor},
+              bg: isActive ? 'brand.600' : { bgColor },
               transform: 'translateX(4px)',
             }}
             pl={level > 0 ? (collapsed ? "3" : "8") : (collapsed ? "3" : "4")}
             position="relative"
             overflow="hidden"
           >
-            <Icon 
-              as={item.icon} 
+            <Icon
+              as={item.icon}
               fontSize={collapsed ? "18" : "18"}
               mr={collapsed ? 0 : 3}
               flexShrink={0}
             />
-            
+
             {!collapsed && (
               <Flex align="center" justify="space-between" flex={1}>
                 <Text fontSize="sm" fontWeight="medium" noOfLines={1}>
                   {item.name}
                 </Text>
-                
+
                 {item.badge && (
-                  <Badge 
-                    colorScheme="red" 
-                    fontSize="xs" 
-                    borderRadius="full" 
+                  <Badge
+                    colorScheme="red"
+                    fontSize="xs"
+                    borderRadius="full"
                     px={2}
                     ml={2}
                   >
                     {item.badge}
                   </Badge>
                 )}
-                
+
                 {hasSubmenu && (
                   <Icon
                     as={activeSubmenu === item.name ? FiChevronLeft : FiChevronRight}
@@ -307,7 +319,7 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
                 )}
               </Flex>
             )}
-            
+
             {collapsed && item.badge && (
               <Box
                 position="absolute"
@@ -321,7 +333,7 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
             )}
           </Flex>
         </Link>
-        
+
         {hasSubmenu && !collapsed && (
           <Collapse in={activeSubmenu === item.name}>
             <VStack spacing={1} align="stretch" ml="8" mt={1}>
@@ -355,9 +367,9 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
     >
       {/* Header */}
       {!isMobile && (
-        <Flex 
-          h="20" 
-          align="center" 
+        <Flex
+          h="20"
+          align="center"
           px={collapsed ? "3" : "4"}
           justify={collapsed ? "center" : "space-between"}
           borderBottom="1px"
@@ -462,9 +474,9 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
       {!collapsed && !isMobile && user && (
         <Box px="4" py="4" borderBottom="1px" borderBottomColor={borderColor}>
           <HStack spacing={3}>
-            <Avatar 
-              size="md" 
-              name={user.name} 
+            <Avatar
+              size="md"
+              name={user.name}
               src={`https://ui-avatars.com/api/?name=${user.name}&background=3182CE&color=fff`}
               border="2px solid"
               borderColor="brand.500"
@@ -475,7 +487,7 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
               <Text fontSize="xs" color="gray.500" mt={1}>{user.email}</Text>
             </Box>
           </HStack>
-          
+
           {user.role === 'patient' && (
             <SimpleGrid columns={2} spacing={2} mt={3}>
               <Box textAlign="center" p={2} bg="blue.50" borderRadius="md">
@@ -518,9 +530,9 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
       )}
 
       {/* Main Navigation */}
-      <Box 
-        flex={1} 
-        overflowY="auto" 
+      <Box
+        flex={1}
+        overflowY="auto"
         sx={{
           '&::-webkit-scrollbar': {
             width: '4px',
@@ -535,16 +547,16 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
         }}
       >
         <VStack spacing={1} align="stretch" p={collapsed ? 2 : 4}>
-          <Text 
-            fontSize="xs" 
-            fontWeight="bold" 
-            color="gray.500" 
+          <Text
+            fontSize="xs"
+            fontWeight="bold"
+            color="gray.500"
             px={collapsed ? 2 : 3}
             display={collapsed ? 'none' : 'block'}
           >
             MAIN NAVIGATION
           </Text>
-          
+
           {links.main.map((item, index) => (
             <NavItem key={index} item={item} />
           ))}
@@ -564,17 +576,57 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
                 {notifications.length}
               </Badge>
             </HStack>
-            
+
             <Menu>
-              <MenuButton as={Button} size="sm" variant="ghost" leftIcon={<FiSettings />}>
+              <MenuButton
+                as={Button}
+                size="sm"
+                variant="ghost"
+                leftIcon={<FiSettings />}
+              >
                 Settings
               </MenuButton>
+
               <MenuList>
+
+                {/* Profile */}
                 <MenuItem icon={<FiUser />}>Profile</MenuItem>
+
+                {/* THEME SUB-MENU */}
+                 <MenuGroup title="Theme Settings">
+          <MenuOptionGroup
+            type="radio"
+            defaultValue={colorMode}
+            onChange={(val) => setColorMode(val)}
+          >
+            <MenuItemOption value="light" icon={<SunIcon />}>
+              Light
+            </MenuItemOption>
+
+            <MenuItemOption value="dark" icon={<MoonIcon />}>
+              Dark
+            </MenuItemOption>
+
+            <MenuItemOption value="system" icon={<MdBrightnessAuto />}>
+              System
+            </MenuItemOption>
+          </MenuOptionGroup>
+        </MenuGroup>
+
+                {/* Preferences */}
                 <MenuItem icon={<FiSettings />}>Preferences</MenuItem>
+
+                {/* Language */}
                 <MenuItem icon={<FiGlobe />}>Language</MenuItem>
+
                 <MenuDivider />
-                <MenuItem icon={<FiLogOut />} color="red.500" onClick={handleLogout}>
+
+                {/* Logout */}
+                <MenuItem
+                  icon={<FiLogOut />}
+                  color="red.500"
+                  onClick={handleLogout}
+                >
                   Logout
                 </MenuItem>
               </MenuList>
@@ -608,7 +660,7 @@ const Sidebar = ({ onClose, onToggle, isMobile = false, ...rest }) => {
                 )}
               </IconButton>
             </Tooltip>
-            
+
             <Tooltip label="Settings" placement="right">
               <Menu>
                 <MenuButton as={IconButton} icon={<FiSettings />} size="sm" variant="ghost" />
