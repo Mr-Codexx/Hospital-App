@@ -50,6 +50,7 @@ import Contact from '../pages/Contact';
 import Services from '../pages/Services';
 import DoctorProfile from '../pages/DoctorProfile';
 import Doctors from '../pages/Pharmacy';
+import DoctorsPage from '../components/Doctors';
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -102,7 +103,7 @@ const AppRoutes = () => {
          <Route path="/doctor/:id" element={<DoctorProfile />} />
         <Route path="/pharmacy" element={<Pharmacy/>} />
         <Route path="/departments" element={<DoctorsListingPage />} />
-        <Route path="/doctors" element={<Doctors />} />
+        <Route path="/doctors" element={<DoctorsPage />} />
         <Route path="/emergency" element={<Emergency />} />
         <Route path="/doctors/:departmentName" element={<DepartmentDoctorsPage />} />
         <Route path="/departments/:departmentName/doctors" element={<DepartmentDoctorsPage />} />

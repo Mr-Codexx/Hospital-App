@@ -24,7 +24,7 @@ import {
 import { FiSearch, FiFilter, FiStar, FiUsers } from "react-icons/fi";
 import hospitalData from "../data/HospitalData.json";
 
-const Doctors = () => {
+const DoctorsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [specializationFilter, setSpecializationFilter] = useState("all");
   const navigate = useNavigate();
@@ -119,4 +119,4 @@ const Doctors = () => {
   );
 };
 
-export default Doctors;
+export default DoctorsPage;
