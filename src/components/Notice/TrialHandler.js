@@ -34,7 +34,7 @@ const TrialHandler = ({ children }) => {
   
   // Trial end time (8 PM today)
   const trialEndTime = new Date();
-  trialEndTime.setHours(17, 10, 0, 0); // 8 PM today
+  trialEndTime.setHours(23, 59, 0, 0); // 8 PM today
   
   // Admin information
   const adminInfo = {
@@ -405,7 +405,7 @@ const TrialHandler = ({ children }) => {
 
               <Text textAlign="center" fontSize="md">
                 This is a <b>trial website</b> developed by <b>Sachin Sharma</b>.
-                You can explore the features, but the trial will end at 8 PM today.
+                You can explore the features, but the trial will end at 11:59 PM today.
               </Text>
 
               <Box textAlign="center">
