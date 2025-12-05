@@ -34,15 +34,15 @@ const TrialHandler = ({ children }) => {
   
   // Trial end time (8 PM today)
   const trialEndTime = new Date();
-  trialEndTime.setHours(20, 0, 0, 0); // 8 PM today
+  trialEndTime.setHours(17, 10, 0, 0); // 8 PM today
   
   // Admin information
   const adminInfo = {
     name: "Sachin Sharma",
     role: "Full Stack Developer",
     availability: "Available 24/7",
-    whatsapp: "+91 7906310812",
-    email: "mr-sachinsharma.dev@gmail.com",
+    whatsapp: "7906310812",
+    email: "mrsachinsharma.dev@gmail.com",
     avatar: "/assets/Sachin.png"
   };
 
