@@ -1,5 +1,10 @@
 import React from 'react';
-import { ChakraProvider, extendTheme, ColorModeScript, Box } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  extendTheme,
+  ColorModeScript,
+  Box
+} from '@chakra-ui/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
@@ -14,6 +19,9 @@ import HospitalAIChatbot from './components/HospitalAIChatbot';
 import GetAmbulance from './pages/GetAmbulance';
 import { AmbulanceProvider } from './context/AmbulanceContext';
 import { NavigationHistoryProvider } from './components/BreadcrumbNavigator';
+
+// Import the single Trial Handler
+import TrialHandler from './components/Notice/TrialHandler';
 
 const theme = extendTheme({
   colors: {
@@ -69,11 +77,14 @@ function App() {
                 <AmbulanceProvider>
                   <Router>
                     <NavigationHistoryProvider>
-                      <AppRoutes />
-                      <HospitalAIChatbot />
-                      <Box style={{ zIndex: 111, position: "fixed" }}>
-                        <GetAmbulance />
-                      </Box>
+                      {/* Wrap everything with TrialHandler */}
+                      <TrialHandler>
+                        <AppRoutes />
+                        <HospitalAIChatbot />
+                        <Box style={{ zIndex: 111, position: "fixed" }}>
+                          <GetAmbulance />
+                        </Box>
+                      </TrialHandler>
                     </NavigationHistoryProvider>
                   </Router>
                 </AmbulanceProvider>
