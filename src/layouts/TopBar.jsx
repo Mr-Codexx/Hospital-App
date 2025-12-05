@@ -22,7 +22,6 @@ import {
   useToast,
   VStack,
   Divider,
-  Progress,
   Button,
   SimpleGrid,
   Switch,
@@ -45,88 +44,50 @@ import {
   FiSearch,
   FiHome,
   FiCalendar,
-  FiMessageSquare,
   FiShield,
   FiGlobe,
   FiDownload,
   FiUpload,
   FiRefreshCw,
-  FiEye,
-  FiEyeOff,
-  FiLock,
-  FiUnlock,
-  FiCheck,
-  FiX,
-  FiPlus,
-  FiFilter,
-  FiStar,
   FiActivity,
-  FiTrendingUp,
-  FiBarChart2,
-  FiCreditCard,
-  FiShoppingCart,
-  FiPackage,
-  FiTruck,
-  FiBook,
-  FiVideo,
-  FiHeadphones,
-  FiShare2,
-  FiCopy,
-  FiEdit,
-  FiTrash2,
-  FiSave,
-  FiPrinter,
 } from 'react-icons/fi';
 import {
-  MdHealthAndSafety,
-  MdDashboard,
   MdLocalHospital,
-  MdEmergency,
-  MdAccessTime,
-  MdVerifiedUser,
-  MdNotifications,
-  MdLanguage,
-  MdPayment,
-  MdConfirmationNumber,
-  MdSchool,
-  MdWork,
-  MdLocationOn,
 } from 'react-icons/md';
 import { useAuth } from '../context/AuthContext';
 import { useHospitalDataContext } from '../context/HospitalDataContext';
+import LoginModal from '../components/LoginModal';
 
 const TopBar = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, requireLogin } = useAuth();
   const { getNotifications, getTodaysAppointments } = useHospitalDataContext();
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
   const { isOpen: isNotificationsOpen, onOpen: onNotificationsOpen, onClose: onNotificationsClose } = useDisclosure();
   const { isOpen: isSettingsOpen, onOpen: onSettingsOpen, onClose: onSettingsClose } = useDisclosure();
   
+  // Login modal state - use simple useState instead of useDisclosure to avoid conflicts
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
   const isMobile = useBreakpointValue({ base: true, md: false });
-  const isTablet = useBreakpointValue({ base: false, md: true, lg: false });
-  
+
   const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
-  const cardBg = useColorModeValue('white', 'gray.700');
-  
+
   const [notifications, setNotifications] = useState([]);
   const [todayAppointments, setTodayAppointments] = useState(0);
   const [unreadCount, setUnreadCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
-  const [systemStatus, setSystemStatus] = useState({
-    online: true,
-    maintenance: false,
-    load: 45,
-    uptime: '99.8%',
-  });
 
+    // useEffect(() => {
+    //   requireLogin();
+    // }, []);
   useEffect(() => {
     const loadData = async () => {
       try {
         const notifs = getNotifications?.() || [];
         const appointments = getTodaysAppointments?.() || [];
-        
+
         const unread = notifs.filter(n => !n.read);
         setNotifications(notifs.slice(0, 10));
         setUnreadCount(unread.length);
@@ -135,11 +96,23 @@ const TopBar = () => {
         console.error('Error loading topbar data:', error);
       }
     };
-    
+
     loadData();
-    const interval = setInterval(loadData, 60000); // Refresh every minute
+    const interval = setInterval(loadData, 60000);
     return () => clearInterval(interval);
   }, [getNotifications, getTodaysAppointments]);
+
+  const handleLoginSuccess = (loggedInUser) => {
+    alert('Login Successful!');
+    // setIsLoginModalOpen(false);
+     requireLogin();
+    toast({
+      title: 'Login Successful!',
+      description: `Welcome back, ${loggedInUser.name}`,
+      status: 'success',
+      duration: 3000,
+    });
+  };
 
   const handleLogout = () => {
     logout();
@@ -151,36 +124,7 @@ const TopBar = () => {
     });
   };
 
-  const handleNotificationClick = (notification) => {
-    toast({
-      title: notification.title || 'Notification',
-      description: notification.message,
-      status: 'info',
-      duration: 3000,
-    });
-  };
 
-  const handleMarkAllAsRead = () => {
-    setNotifications(prev => prev.map(n => ({ ...n, read: true })));
-    setUnreadCount(0);
-    toast({
-      title: 'Marked as Read',
-      description: 'All notifications marked as read',
-      status: 'success',
-      duration: 2000,
-    });
-  };
-
-  const handleClearAll = () => {
-    setNotifications([]);
-    setUnreadCount(0);
-    toast({
-      title: 'Cleared',
-      description: 'All notifications cleared',
-      status: 'success',
-      duration: 2000,
-    });
-  };
 
   const quickActions = [
     { icon: FiHome, label: 'Dashboard', path: '/', color: 'blue' },
@@ -198,7 +142,11 @@ const TopBar = () => {
   ];
 
   if (isMobile) return null;
-
+  const handleLoginClick = () => {
+    alert('Login Clicked');
+    setIsLoginModalOpen(true);
+    requireLogin();
+  };
   return (
     <>
       <Flex
@@ -263,14 +211,14 @@ const TopBar = () => {
         {/* Right Section */}
         <HStack spacing={4}>
           {/* System Status */}
-          <Tooltip label={`System Status: ${systemStatus.online ? 'Online' : 'Offline'} (Uptime: ${systemStatus.uptime})`}>
+          <Tooltip label="System Status: Online (Uptime: 99.8%)">
             <Box position="relative">
               <Box
                 w="8px"
                 h="8px"
                 borderRadius="full"
-                bg={systemStatus.online ? 'green.500' : 'red.500'}
-                animation={systemStatus.online ? 'pulse 2s infinite' : 'none'}
+                bg="green.500"
+                animation="pulse 2s infinite"
               />
             </Box>
           </Tooltip>
@@ -319,10 +267,10 @@ const TopBar = () => {
                 <Flex justify="space-between" align="center">
                   <Text fontWeight="bold">Notifications ({unreadCount})</Text>
                   <HStack spacing={2}>
-                    <Button size="xs" onClick={handleMarkAllAsRead}>
+                    <Button size="xs" onClick={() => setUnreadCount(0)}>
                       Mark All Read
                     </Button>
-                    <Button size="xs" variant="ghost" onClick={handleClearAll}>
+                    <Button size="xs" variant="ghost" onClick={() => setNotifications([])}>
                       Clear All
                     </Button>
                   </HStack>
@@ -338,9 +286,14 @@ const TopBar = () => {
                       borderBottom="1px"
                       borderColor="gray.100"
                       _last={{ borderBottom: 'none' }}
-                      onClick={() => handleNotificationClick(notification)}
-                      bg={!notification.read ? 'blue.50' : 'transparent'}
-                      _dark={{ bg: !notification.read ? 'blue.900' : 'transparent' }}
+                      onClick={() => {
+                        toast({
+                          title: notification.title || 'Notification',
+                          description: notification.message,
+                          status: 'info',
+                          duration: 3000,
+                        });
+                      }}
                     >
                       <VStack align="start" spacing={1} w="100%">
                         <HStack justify="space-between" w="100%">
@@ -397,41 +350,51 @@ const TopBar = () => {
             />
           </Tooltip>
 
-          {/* User Menu */}
-          <Menu>
+          <Menu isLazy placement="bottom-end">
             <MenuButton>
-              <HStack spacing={2} cursor="pointer">
-                <Avatar
-                  size="sm"
-                  name={user?.name}
-                  src={`https://ui-avatars.com/api/?name=${user?.name}&background=3182CE&color=fff`}
-                  border="2px solid"
-                  borderColor="brand.500"
-                />
-                <Box display={{ base: 'none', lg: 'block' }}>
-                  <Text fontSize="sm" fontWeight="medium">{user?.name}</Text>
-                  <Badge
-                    colorScheme="blue"
-                    fontSize="0.6em"
-                    variant="subtle"
-                  >
-                    {user?.role}
-                  </Badge>
-                </Box>
-              </HStack>
+              {user ? (
+                <HStack spacing={2} cursor="pointer">
+                  <Avatar
+                    size="sm"
+                    name={user?.name}
+                    src={`https://ui-avatars.com/api/?name=${user?.name}&background=3182CE&color=fff`}
+                    border="2px solid"
+                    borderColor="brand.500"
+                  />
+                  <Box display={{ base: 'none', lg: 'block' }}>
+                    <Text fontSize="sm" fontWeight="medium">{user?.name}</Text>
+                    <Badge colorScheme="blue" fontSize="0.6em" variant="subtle">
+                      {user?.role}
+                    </Badge>
+                  </Box>
+                </HStack>
+              ) : (
+                <Button 
+                  size="sm" 
+                  colorScheme="blue" 
+                  onClick={handleLoginClick}
+                >
+                  Login
+                </Button>
+              )}
             </MenuButton>
-            <MenuList>
-              <MenuItem icon={<FiUser />}>My Profile</MenuItem>
-              <MenuItem icon={<FiSettings />} onClick={onSettingsOpen}>
-                Settings
-              </MenuItem>
-              <MenuItem icon={<FiShield />}>Security</MenuItem>
-              <MenuItem icon={<FiGlobe />}>Language</MenuItem>
-              <MenuDivider />
-              <MenuItem icon={<FiLogOut />} color="red.500" onClick={handleLogout}>
-                Logout
-              </MenuItem>
-            </MenuList>
+
+            {user && (
+              <MenuList>
+                <MenuItem icon={<FiUser />}>My Profile</MenuItem>
+                <MenuItem icon={<FiSettings />} onClick={onSettingsOpen}>Settings</MenuItem>
+                <MenuItem icon={<FiShield />}>Security</MenuItem>
+                <MenuItem icon={<FiGlobe />}>Language</MenuItem>
+                <MenuDivider />
+                <MenuItem
+                  icon={<FiLogOut />}
+                  color="red.500"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </MenuItem>
+              </MenuList>
+            )}
           </Menu>
         </HStack>
       </Flex>
@@ -458,7 +421,12 @@ const TopBar = () => {
                   _hover={{ bg: 'gray.50' }}
                   cursor="pointer"
                   onClick={() => {
-                    handleNotificationClick(notification);
+                    toast({
+                      title: notification.title,
+                      description: notification.message,
+                      status: 'info',
+                      duration: 3000,
+                    });
                     onNotificationsClose();
                   }}
                 >
@@ -549,6 +517,17 @@ const TopBar = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+
+      {/* Login Modal - SIMPLIFIED */}
+      {isLoginModalOpen && (
+      <Box className="login-modal z-50000">
+          <LoginModal
+          isOpen={isLoginModalOpen}
+          onClose={() => setIsLoginModalOpen(false)}
+          onLoginSuccess={handleLoginSuccess}
+        />
+      </Box>
+      )}
 
       <style jsx>{`
         @keyframes pulse {

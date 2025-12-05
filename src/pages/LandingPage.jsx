@@ -362,7 +362,7 @@ const LandingPage = () => {
                     <HStack spacing={4}>
                       <Button
                         as={RouterLink}
-                        to="/appointment"
+                        to="/leadership"
                         size="lg"
                         colorScheme="brand"
                         rightIcon={<FiArrowRight />}
@@ -427,18 +427,28 @@ const LandingPage = () => {
               </Box>
             </HStack>
 
-            <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
-              {['Home', 'About', 'Doctors', 'Departments', 'Services', 'Contact'].map((item) => (
-                <Text
-                  key={item}
-                  fontWeight="medium"
-                  cursor="pointer"
-                  _hover={{ color: 'brand.500' }}
-                >
-                  {item}
-                </Text>
-              ))}
-            </HStack>
+     <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
+  {[
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Doctors', path: '/doctors' },
+    { label: 'Departments', path: '/departments' },
+    { label: 'Services', path: '/services' },
+    { label: 'Contact', path: '/contact' },
+  ].map((item) => (
+    <Text
+      key={item.label}
+      as={RouterLink}
+      to={item.path}
+      fontWeight="medium"
+      cursor="pointer"
+      _hover={{ color: 'brand.500' }}
+    >
+      {item.label}
+    </Text>
+  ))}
+</HStack>
+
 
             <Button
               as={RouterLink}

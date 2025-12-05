@@ -44,6 +44,12 @@ import Unauthorized from '../pages/Unauthorized';
 import MainLayout from '../layouts/MainLayout';
 import AuthLayout from '../layouts/AuthLayout';
 import TelemedicinePage from '../pages/Telemedicine';
+import Pharmacy from '../pages/Pharmacy';
+import About from '../pages/About';
+import Contact from '../pages/Contact';
+import Services from '../pages/Services';
+import DoctorProfile from '../pages/DoctorProfile';
+import Doctors from '../pages/Pharmacy';
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
@@ -90,7 +96,13 @@ const AppRoutes = () => {
       <Route path="/dlist" element={<DoctorsList />} />
 
       <Route element={<MainLayout />}>
-        <Route path="/doctors" element={<DoctorsListingPage />} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/services" element={<Services/>} />
+         <Route path="/doctor/:id" element={<DoctorProfile />} />
+        <Route path="/pharmacy" element={<Pharmacy/>} />
+        <Route path="/departments" element={<DoctorsListingPage />} />
+        <Route path="/doctors" element={<Doctors />} />
         <Route path="/emergency" element={<Emergency />} />
         <Route path="/doctors/:departmentName" element={<DepartmentDoctorsPage />} />
         <Route path="/departments/:departmentName/doctors" element={<DepartmentDoctorsPage />} />

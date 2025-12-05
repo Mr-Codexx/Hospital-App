@@ -339,18 +339,18 @@
     },
     {
       "id": "DOC007",
-      "name": "Dr. Arvind Joshi",
+      "name": "Dr. Sachin Sharma",
       "gender": "Male",
-      "age": 50,
+      "age": 26,
       "specialization": "Oncologist",
       "department": "Oncology",
       "qualifications": ["DM (Oncology)", "FIACM"],
-      "experience": "20 years",
+      "experience": "10 years",
       "registrationNumber": "MCI-789012",
       "contact": {
-        "phone": "+91-9876543222",
-        "email": "dr.arvind@medicarepro.in",
-        "emergencyContact": "+91-9876543223"
+        "phone": "+91-7906310812",
+        "email": "dr.sachin@medicarepro.in",
+        "emergencyContact": "+91-7906310812"
       },
       "availability": {
         "days": ["Monday", "Wednesday", "Friday"],
